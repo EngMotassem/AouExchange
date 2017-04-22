@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="apps.aouexchange">
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".StudentActivity.StudentActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity
+            android:name=".StudentActivity.broadcast.BroadcastActivity"
+            android:label="@string/title_activity_broadcast"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".StudentActivity.addActivity.AddActivity"
+            android:label="@string/title_activity_add"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".StudentActivity.getData.getData"
+            android:label="@string/title_activity_get_data"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".StudentActivity.Chat.ChatActivity"
+            android:label="@string/title_activity_chat"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".StudentActivity.loginreg.SignIn"/>
+        <activity
+            android:name=".StudentActivity.Chat.ChatMessages"
+            android:label="@string/title_activity_chat_messages"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".StudentActivity.loginreg.Register"/>
+        <activity
+            android:name=".StudentActivity.admin.AdminActivity"
+            android:label="@string/title_activity_admin"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".StudentActivity.admin.NotificationDetails"
+            android:label="@string/title_activity_notification_details"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".StudentActivity.admin.StudentActivitiesList"
+            android:label="@string/title_activity_student_activities_list"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".StudentActivity.admin.ActivityDetails"
+            android:label="@string/title_activity_details"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".StudentActivity.news.ShowNotify"
+            android:label="@string/title_activity_show_notify"
+            android:parentActivityName=".StudentActivity.StudentActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".StudentActivity.StudentActivity"/>
+        </activity>
+        <!-- Defining Services -->
+        <service android:name=".StudentActivity.services.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:name=".StudentActivity.services.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <activity android:name=".StudentActivity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
